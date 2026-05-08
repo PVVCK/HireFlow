@@ -1,0 +1,17 @@
+package com.hireflow.common.repository;
+
+import com.hireflow.common.entity.Feedback;
+import com.hireflow.common.entity.InterviewBooking;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface FeedbackRepository extends JpaRepository<Feedback, Long>
+{
+
+    Optional<Feedback> findByInterviewBooking(InterviewBooking booking);
+
+    boolean existsByInterviewBooking(InterviewBooking booking);
+
+
+}
